@@ -4,7 +4,6 @@
 #export PATHDEFAULT=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 #export PATHRVM=$HOME/.rvm/bin
 #export PATHPORT=/opt/local/bin:/opt/local/sbin
-#export PATHGOOG=$HOME/Google\ Drive/scriptz/settingz/osx
 #export PATHHEROKU=/usr/local/heroku/bin
 #export PATH=:"$PATHRVM:$PATHPORT:$PATHGOOG:$PATHHEROKU:$PATHDEFAULT"
 
@@ -152,7 +151,7 @@ BWHT="\[\033[47m\]" # background white
 DEBCHROOT="${debian_chroot:+($debian_chroot)}"
 
 # TERMINAL
-PS1="$HC$FRED[$FBLE$DEBCHROOT\u$FRED][$FBLE\w$FRED][$FBLE\d$FRED][$FBLE\T$FRED] $RS
+PS1="$HC$FRED[$FBLE$DEBCHROOT\u$FRED][$FGRN\w$FRED][$FCYN\d$FRED][$FMAG\T$FRED] $RS
 "
 PS2="$HC$FRED&gt; $RS
 "
@@ -175,17 +174,16 @@ alias ....="cd ../../.."
 alias l='ls -G'
 alias ll='ls -Gal'
 
-# aliases for macports
-alias mpAll='sudo port selfupdate && sudo port upgrade outdated'
-alias mpUpdate='sudo port selfupdate'
-alias mpUpgrade='sudo port upgrade outdated'
-
 # aliases for rvm
 alias rrvmi='rvm install '
 alias rrvmu='rvm use '
 alias rrvml='rvm list'
 
 # aliases for git
+
+# alias for update various systems
+alias aaaAptGetAll="sudo apt-get update; sudo apt-get update"
+alias aaaUpdateAll="sudo apt-get update; sudo apt-get update; sudo apt-get autoremove; sudo apt-get clean; gem update"
 
 
 
