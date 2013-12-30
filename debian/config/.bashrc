@@ -182,8 +182,8 @@ alias rrvml='rvm list'
 # aliases for git
 
 # alias for update various systems
-alias aaaAptGetAll="sudo apt-get update; sudo apt-get update"
-alias aaaUpdateAll="sudo apt-get update; sudo apt-get update; sudo apt-get autoremove; sudo apt-get clean; gem update"
+alias aaaAptGetAll="sudo apt-get update; sudo apt-get upgrade"
+alias aaaUpdateAll="sudo apt-get update; sudo apt-get upgrade; sudo apt-get autoremove; sudo apt-get clean; gem update"
 
 
 
