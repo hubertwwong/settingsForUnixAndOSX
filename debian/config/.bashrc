@@ -182,8 +182,8 @@ alias rrvml='rvm list'
 # aliases for git
 
 # alias for update various systems
-alias aaaAptGetAll="sudo apt-get update; sudo apt-get upgrade"
-alias aaaUpdateAll="sudo apt-get update; sudo apt-get upgrade; sudo apt-get autoremove; sudo apt-get clean; gem update"
+alias aaaAptGetAll="sudo apt-get update; sudo apt-get dist-upgrade -y; sudo apt-get clean;"
+alias aaaUpdateAll="sudo apt-get update; sudo apt-get dist-upgrade -y; sudo apt-get autoremove; sudo apt-get clean; rvm get stable; gem update; gem cleanup"
 
 
 
@@ -192,7 +192,7 @@ alias aaaUpdateAll="sudo apt-get update; sudo apt-get upgrade; sudo apt-get auto
 ##############################################################################
 
 # Add RVM to PATH for scripting
-PATH=$HOME/.rvm/bin:$PATH:~/zzz/apps/phantomjs/bin:~/Dropbox/scriptz/settingsForUnixAndOSX/debian
+PATH=$HOME/.rvm/bin:$PATH:~/Dropbox/scriptz/settingsForUnixAndOSX/debian
 
 # Load RVM into a shell session *as a function*
 # this needs to come last.
