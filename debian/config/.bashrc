@@ -1,14 +1,3 @@
-# PATH ALIAS
-################################################################################
-
-#export PATHDEFAULT=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-#export PATHRVM=$HOME/.rvm/bin
-#export PATHPORT=/opt/local/bin:/opt/local/sbin
-#export PATHHEROKU=/usr/local/heroku/bin
-#export PATH=:"$PATHRVM:$PATHPORT:$PATHGOOG:$PATHHEROKU:$PATHDEFAULT"
-
-
-
 # DEBIAN
 ################################################################################
 
@@ -66,21 +55,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-#if [ "$color_prompt" = yes ]; then
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#else
-#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-#fi
-#unset color_prompt force_color_prompt
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -95,10 +70,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
+# Defer to bash_alises
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -156,8 +128,20 @@ PS2="$HC$FRED&gt; $RS
 # PATHS
 ##############################################################################
 
+# FOR OSX
+# MACPORTS
+#export PATHPORT=/opt/local/bin:/opt/local/sbin
+
+# HEROKU
+#export PATHHEROKU=/usr/local/heroku/bin
+
+# FOR DEBIAN
+#export PATHDEFAULT=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATHSETTING=$HOME/Dropbox/scriptz/settingsForUnixAndOSX/debian
+export PATHRVM=$HOME/.rvm/bin
+
 # Add RVM to PATH for scripting
-PATH=$HOME/.rvm/bin:$PATH:~/Dropbox/scriptz/settingsForUnixAndOSX/debian
+export PATH=$PATHRVM:$PATH:$PATHSETTING
 
 # Load RVM into a shell session *as a function*
 # this needs to come last.
