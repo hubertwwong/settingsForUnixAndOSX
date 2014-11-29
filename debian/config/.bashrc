@@ -1,5 +1,5 @@
 # PATH ALIAS
-##############################################################################
+################################################################################
 
 #export PATHDEFAULT=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 #export PATHRVM=$HOME/.rvm/bin
@@ -10,7 +10,7 @@
 
 
 # DEBIAN
-##############################################################################
+################################################################################
 
 # If not running interactively, don't do anything
 case $- in
@@ -94,11 +94,6 @@ if [ -x /usr/bin/dircolors ]; then
     #alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -123,7 +118,7 @@ fi
 
 
 # PROMPTS
-##############################################################################
+################################################################################
 
 # ANSI color codes
 RS="\[\033[0m\]"    # reset
@@ -155,36 +150,6 @@ PS1="$HC$FRED[$FBLE$DEBCHROOT\u$FRED][$FGRN\w$FRED][$FCYN\d$FRED][$FMAG\T$FRED] 
 "
 PS2="$HC$FRED&gt; $RS
 "
-
-
-
-
-
-# ALIASES
-##############################################################################
-
-# aliases for paths.
-#alias ppRailsAuth='cd $HOME/Google\ Drive/code/main/rails/auth_from_scratch_01'
-#alias ppUSBSync='cd $HOME/Google\ Drive/scriptz/usbSync/app/; ruby convert.rb'
-
-# aliases for shells.
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias l='ls -G'
-alias ll='ls -Gal'
-
-# aliases for rvm
-alias rrvmi='rvm install '
-alias rrvmu='rvm use '
-alias rrvml='rvm list'
-
-# aliases for git
-
-# alias for update various systems
-alias aaaAptGetAll="sudo apt-get update; sudo apt-get dist-upgrade -y; sudo apt-get clean;"
-alias aaaUpdateAll="sudo apt-get update; sudo apt-get dist-upgrade -y; sudo apt-get autoremove; sudo apt-get clean; rvm get stable; gem update; gem cleanup"
-
 
 
 

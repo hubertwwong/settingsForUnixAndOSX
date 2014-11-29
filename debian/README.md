@@ -1,3 +1,5 @@
 settings for debian
 
-notes later..
+aaaUpdateDotFiles.
+Copies all of the dot files and overrides them. Assumes that you are using
+some drop directory. Change the path if you want to use it.
