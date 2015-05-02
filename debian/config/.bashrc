@@ -138,6 +138,7 @@ PS2="$HC$FRED&gt; $RS
 # FOR DEBIAN
 #export PATHDEFAULT=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATHSETTING=$HOME/Dropbox/scriptz/settingsForUnixAndOSX/debian
+export PATHNVM=$HOME/.nvm
 export PATHRVM=$HOME/.rvm/bin
 
 # Add RVM to PATH for scripting
@@ -146,3 +147,6 @@ export PATH=$PATHRVM:$PATH:$PATHSETTING
 # Load RVM into a shell session *as a function*
 # this needs to come last.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# LOAD NVM
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
