@@ -31,12 +31,12 @@ shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+  debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+  xterm-color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -45,14 +45,14 @@ esac
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
+  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+  	# We have color support; assume it's compliant with Ecma-48
+  	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+  	# a case would tend to support setf rather than setaf.)
+  	color_prompt=yes
+  else
+	  color_prompt=
+  fi
 fi
 
 
@@ -86,6 +86,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# GIT
+################################################################################
+
+# displays what git branch you are.
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 
 
 
@@ -118,7 +126,7 @@ BWHT="\[\033[47m\]" # background white
 DEBCHROOT="${debian_chroot:+($debian_chroot)}"
 
 # TERMINAL
-PS1="$HC$FRED[$FBLE$DEBCHROOT\u$FRED][$FGRN\w$FRED][$FCYN\d$FRED][$FMAG\T$FRED] $RS
+PS1="$HC$FRED$FBLE$DEBCHROOT\u$FRED | $FGRN\w$FRED | $FCYN\d$FRED | $FMAG\T$FRED |$FYEL\$(parse_git_branch)$FRED $RS
 "
 PS2="$HC$FRED&gt; $RS
 "
